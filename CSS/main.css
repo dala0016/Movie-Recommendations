@@ -1,0 +1,276 @@
+/*****************
+DEFAULT
+*****************/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+
+/*****************
+LAYOUT
+*****************/
+
+body {
+    background-color: #213CB2;
+}
+
+.search.home h1 {
+    text-align: center;
+    margin-top: -12.5rem;
+    font-size: 3.5rem;
+    font-family: 'Bungee', cursive;
+    color: #FFD65E;
+}
+.search.home h2 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: 'Bungee', cursive;
+    color: #FFD65E;
+}
+
+.page {
+    display: none;
+    padding: 1rem;
+    margin-top: 3rem;
+}
+
+.page.active {
+    transform: translateX(0);
+    display: block;
+}
+
+.page#recommend-results {
+    padding-top: 2rem;
+}
+
+.not{
+    display: none;
+}
+
+.page.active #attribute {
+    display: block;
+    position: relative;
+    width: 10rem;
+    bottom: -32rem;
+    margin: auto;
+}
+.loading p {
+    z-index: 150;
+    font-size: 10rem;
+    position: fixed;
+
+    top: 50%;
+    right: 50%;
+    /*
+    animation-name: spin;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 1s;
+*/
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-359deg);
+    }
+}
+
+/*****************
+SEARCH BAR
+*****************/
+
+.search {
+    position: fixed;
+    width: 40rem;
+    top: 1rem;
+    left: 15rem;
+    right: 0;
+    height: 3rem;
+    border-bottom: 1px solid #333;
+
+    background-color: white;
+    z-index: 100;
+    box-shadow: 0 2px 4px #000;
+    transition: top 0.5s ease-in-out;
+}
+
+.home {
+    position: fixed;
+    top: 45%;
+    border: 1px solid #333;
+
+}
+
+#search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+    /*    background-color:#dedede;*/
+    z-index: 120;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+#search-input {
+    position: absolute;
+    top: 0rem;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 110;
+    padding-left: 1rem;
+    font-size: 1.8rem;
+}
+
+/*****************
+SEARCH RESULTS
+*****************/
+
+.movie {
+    border: 2px solid #bbb;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    overflow: auto;
+    clear: both;
+    box-shadow: 0 3px 5px #000;
+}
+
+.poster {
+    float: left;
+    background-color: #ddd;
+    width: 150px;
+    height: auto;
+    min-height: 150px;
+    margin: 0 1rem 1rem 0;
+
+
+}
+
+.movie-title {
+    font-family: 'Spectral SC', Times, "Times New Roman", serif;
+    font-size: 2rem;
+    display: inline;
+    cursor: pointer;
+    color: #FFD65E;
+}
+
+.movie-desc {
+    font-family: 'Dosis', Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    color: #FFDD7C;
+}
+
+/*****************
+RECOMMENDATIONS
+*****************/
+
+/*****************
+MISC
+*****************/
+
+@media screen and (max-width: 1080px) {
+    .search.home h1 {
+        font-size: 2rem;
+        margin-top: -6.5rem;
+    }
+    .search.home h2 {
+            font-size: 2rem;
+        }
+    .search {
+        width: 25rem;
+        left: 15rem;
+        height: 2.5rem;
+    }
+
+    @media screen and (max-width: 800px) {
+        .search.home h1 {
+            font-size: 3rem;
+            letter-spacing: 1.9rem;
+            margin-top: -8.5rem;
+        }
+        .search.home h2 {
+            font-size: 2rem;
+        }
+        .search {
+            width: 20rem;
+            left: 9rem;
+            height: 2rem;
+        }
+        #search-button {
+            top: -6px;
+            right: -13px;
+        }
+        .movie {
+            margin-bottom: 0.7rem;
+            margin-top: 0.7rem;
+            padding: 0.5rem;
+        }
+
+        .poster {
+            width: 120px;
+            margin: 0 0.7rem 0.7rem 0;
+        }
+
+        .movie-title {
+            font-size: 1.7rem;
+        }
+
+        .movie-desc {
+            font-size: 0.9rem;
+        }
+    }
+    @media screen and (max-width: 570px) {
+        .search.home h1 {
+            font-size: 3rem;
+            margin-top: -8.5rem;
+            letter-spacing: 1rem;
+        }
+        .search.home h2 {
+            font-size: 1.5rem;
+        }
+        .search {
+            width: 15rem;
+            left: 2rem;
+            height: 2rem;
+        }
+        #search-button {
+            width: 3rem;
+            height: 3rem;
+            z-index: 120;
+            top: -6px;
+            right: -13px;
+        }
+        .movie {
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+        }
+
+        .poster {
+            width: 100px;
+            margin: 0 0.5rem 0.5rem 0;
+        }
+
+        .movie-title {
+            font-size: 1.4rem;
+        }
+
+        .movie-desc {
+            font-size: 0.7rem;
+        }
+    }
